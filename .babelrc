@@ -1,0 +1,7 @@
+/* VERY IMPORTANT CUSTOM CONFIGURATION FOR STYLED-COMPONENTS */
+{
+  "presets": [
+    "next/babel" 
+  ],
+  "plugins": [["styled-components", { "ssr": true }]]
+}
