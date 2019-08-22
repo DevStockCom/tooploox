@@ -1,6 +1,6 @@
-import { ActionTypes } from "./types";
+import { ActionTypes, IUser } from "./types";
 
-export const saveUserSuccess = (user: object) => {
+export const saveUserSuccess = (user: IUser) => {
   return { type: ActionTypes.SAVE_USER_SUCCESS, user }
 }
 

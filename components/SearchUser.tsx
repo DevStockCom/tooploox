@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, KeyboardEvent } from 'react'
 import styled from 'styled-components'
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
@@ -10,7 +11,11 @@ const S = {
   `
 }
 
-const SearchUser = ({ onSearch } : any) => {
+interface IProps {
+  onSearch: Function
+}
+
+const SearchUser = ({ onSearch } : IProps) => {
   const [searchValue, setSearchValue] = useState('')
 
   const onEnterPressHandler = (e : KeyboardEvent<HTMLElement>) => {
@@ -22,7 +27,7 @@ const SearchUser = ({ onSearch } : any) => {
   return (
     <S.Wrapper onKeyPress={onEnterPressHandler}>
       <InputGroup>
-        <Input vaue={searchValue} onChange={e => setSearchValue(e.target.value)} />
+        <Input value={searchValue} onChange={e => setSearchValue(e.target.value)} />
         <InputGroupAddon addonType="append">
           <Button onClick={() => onSearch(searchValue)} color="primary">Find User</Button>
         </InputGroupAddon>

@@ -1,6 +1,7 @@
+import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { Dispatch } from "redux";
+import { Dispatch } from "redux"
 
 import Layout from '../components/shared/Layout'
 import SectionWrapper from '../components/shared/SectionWrapper'
@@ -9,7 +10,7 @@ import SearchUser from '../components/SearchUser'
 import DetailsUser from '../components/DetailsUser'
 
 import { fetchUserData } from '../redux/async'
-import { IUser } from '../redux/types';
+import { IUser } from '../redux/types'
 
 interface IProps {
   fetchUserData: (user: string) => (dispatch : Dispatch) => void;
@@ -43,7 +44,6 @@ const Index = ({ fetchUserData, user, error } : IProps) => {
 }
 
 const mapStateToProps = (state : any) => ({
-  isLoading: state.isLoading,
   user: state.user,
   error: state.error,
 })
